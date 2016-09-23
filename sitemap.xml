@@ -2,7 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.leonxtp.com/2016/09/20/first-blog/</loc>
+    <loc>http://blog.leonxtp.com/Good-articles-for-using-github-pages-hexo-duoshuo.html</loc>
+    
+    <lastmod>2016-09-23T03:59:37.309Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.leonxtp.com/first-blog.html</loc>
     
     <lastmod>2016-09-23T02:48:30.933Z</lastmod>
     
@@ -23,14 +30,7 @@
   </url>
   
   <url>
-    <loc>http://blog.leonxtp.com/2016/09/22/Good-articles-for-using-github-pages-hexo-duoshuo/</loc>
-    
-    <lastmod>2016-09-22T12:49:14.916Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.leonxtp.com/2016/09/20/hello-world/</loc>
+    <loc>http://blog.leonxtp.com/hello-world.html</loc>
     
     <lastmod>2016-09-22T06:45:01.711Z</lastmod>
     
