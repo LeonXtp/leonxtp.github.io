@@ -10,3 +10,5 @@ Disallow: /fancybox/
 
 Sitemap: http://blog.leonxtp.com/sitemap.xml
 Sitemap: http://blog.leonxtp.com/baidusitemap.xml
+Sitemap: http://coding.leonxtp.com/sitemap.xml
+Sitemap: http://coding.leonxtp.com/baidusitemap.xml
