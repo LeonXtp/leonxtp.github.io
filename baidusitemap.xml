@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/20/first-blog/</loc>
+    <lastmod>2016-09-23T02:48:30.933Z</lastmod>
+    <data>
+        <display>
+        <title>我的第一篇个人博客</title>
+        <pubTime>2016-09-20T09:06:39.000Z</pubTime>
+        
+        <tag>a-tag</tag>
+         
+         
+           
+             
+              <breadCrumb title="Android" url="http://yoursite.com/categories/Android/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/22/Good-articles-for-using-github-pages-hexo-duoshuo/</loc>
+    <lastmod>2016-09-22T12:49:14.916Z</lastmod>
+    <data>
+        <display>
+        <title>Good articles for using github pages + hexo + duoshuo</title>
+        <pubTime>2016-09-21T16:48:27.000Z</pubTime>
+        
+        <tag>github blog</tag>
+         
+         
+           
+             
+              <breadCrumb title="life" url="http://yoursite.com/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2016/09/20/hello-world/</loc>
+    <lastmod>2016-09-22T06:45:01.711Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2016-09-20T08:42:40.214Z</pubTime>
+        
+        <tag>b-tag</tag>
+         
+         
+           
+             
+              <breadCrumb title="life" url="http://yoursite.com/categories/life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+</urlset>
