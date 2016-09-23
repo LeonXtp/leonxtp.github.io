@@ -34,6 +34,8 @@
 </blockquote>
 <a id="more"></a>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</div><div class="line">    System.out.println(<span class="string">"Hello Hexo!"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<div class="ds-recent-visitors" data-num-items="28" data-avatar-size="42" id="ds-recent-visitors"></div>
+
 ]]></content>
     </entry>
     
