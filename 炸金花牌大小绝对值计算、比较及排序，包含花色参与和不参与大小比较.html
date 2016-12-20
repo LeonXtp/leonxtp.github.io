@@ -84,37 +84,16 @@
 
 
 
-<meta name="description" content="#####昨日忽生兴趣，想起同事正在玩的一个炸金花游戏，见他们讨论略有激烈，想来蛮有趣，于是自己也写来玩玩
-####纸牌游戏炸金花发牌、牌大小比较、排序
-####牌大小计算算法
-#####花色不参与大小比较:
-
-首先对到手的牌按照牌数字按照由大到小排序
-牌大小按照牌型分级
-对于普通牌型，每张牌视为16进制的一个数，A对应14，2对应2，以此类推。牌值即为这幅此16进制牌的10进制大小。  比如最大">
+<meta name="description" content="昨日忽生兴趣，想起同事正在玩的一个炸金花游戏，见他们讨论略有激烈，想来蛮有趣，于是自己也写来玩玩纸牌游戏炸金花发牌、牌大小比较、排序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="炸金花牌大小绝对值计算、比较及排序，包含花色参与和不参与大小比较">
 <meta property="og:url" content="http://blog.leonxtp.com/炸金花牌大小绝对值计算、比较及排序，包含花色参与和不参与大小比较.html">
 <meta property="og:site_name" content="LeonXtp's Blog">
-<meta property="og:description" content="#####昨日忽生兴趣，想起同事正在玩的一个炸金花游戏，见他们讨论略有激烈，想来蛮有趣，于是自己也写来玩玩
-####纸牌游戏炸金花发牌、牌大小比较、排序
-####牌大小计算算法
-#####花色不参与大小比较:
-
-首先对到手的牌按照牌数字按照由大到小排序
-牌大小按照牌型分级
-对于普通牌型，每张牌视为16进制的一个数，A对应14，2对应2，以此类推。牌值即为这幅此16进制牌的10进制大小。  比如最大">
-<meta property="og:updated_time" content="2016-12-20T07:32:49.162Z">
+<meta property="og:description" content="昨日忽生兴趣，想起同事正在玩的一个炸金花游戏，见他们讨论略有激烈，想来蛮有趣，于是自己也写来玩玩纸牌游戏炸金花发牌、牌大小比较、排序">
+<meta property="og:updated_time" content="2016-12-20T07:58:17.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="炸金花牌大小绝对值计算、比较及排序，包含花色参与和不参与大小比较">
-<meta name="twitter:description" content="#####昨日忽生兴趣，想起同事正在玩的一个炸金花游戏，见他们讨论略有激烈，想来蛮有趣，于是自己也写来玩玩
-####纸牌游戏炸金花发牌、牌大小比较、排序
-####牌大小计算算法
-#####花色不参与大小比较:
-
-首先对到手的牌按照牌数字按照由大到小排序
-牌大小按照牌型分级
-对于普通牌型，每张牌视为16进制的一个数，A对应14，2对应2，以此类推。牌值即为这幅此16进制牌的10进制大小。  比如最大">
+<meta name="twitter:description" content="昨日忽生兴趣，想起同事正在玩的一个炸金花游戏，见他们讨论略有激烈，想来蛮有趣，于是自己也写来玩玩纸牌游戏炸金花发牌、牌大小比较、排序">
 
 
 
@@ -357,11 +336,10 @@
       
 
       
-        <p>#####昨日忽生兴趣，想起同事正在玩的一个炸金花游戏，见他们讨论略有激烈，想来蛮有趣，于是自己也写来玩玩</p>
-<p>####纸牌游戏炸金花发牌、牌大小比较、排序</p>
-<p>####牌大小计算算法</p>
-<p>#####花色不参与大小比较:</p>
-<ul>
+        <p>昨日忽生兴趣，想起同事正在玩的一个炸金花游戏，见他们讨论略有激烈，想来蛮有趣，于是自己也写来玩玩<br>纸牌游戏炸金花发牌、牌大小比较、排序</p>
+<a id="more"></a>
+<p>牌大小计算算法</p>
+<h6 id="花色不参与大小比较"><a href="#花色不参与大小比较" class="headerlink" title="花色不参与大小比较:"></a>花色不参与大小比较:</h6><ul>
 <li>首先对到手的牌按照牌数字按照由大到小排序</li>
 <li>牌大小按照牌型分级</li>
 <li>对于普通牌型，每张牌视为16进制的一个数，A对应14，2对应2，以此类推。牌值即为这幅此16进制牌的10进制大小。<br>  比如最大的普通牌为AKJ，则AKJ=14x16x16+13x16+11=3803</li>
@@ -371,14 +349,13 @@
 <li>对于同花顺，取最小的那个数，加上最大的同花牌值，比如：<br>AKQ=12+7855=7867</li>
 <li>对于炸弹，取第一个数，加上最大的同花顺牌值。<br>  比如AAA=14+7867=7881</li>
 </ul>
-<p>#####花色参与大小比较:</p>
-<ul>
+<h6 id="花色参与大小比较"><a href="#花色参与大小比较" class="headerlink" title="花色参与大小比较:"></a>花色参与大小比较:</h6><ul>
 <li>比较规则：在牌数字完全一样的情况下，从最大的牌开始比较，黑桃&gt;红桃&gt;梅花&gt;方片，遇到一个较大的，则结束比较。</li>
 <li>牌值计算原理：在上面花色不参与大小比较算法的基础上，对花色按照4进制进行花色值计算。并对每副计算出来的牌大小乘以64，为什么乘以64？因为花色的范围为63~0。在不考虑花色参与比较的情况下，乘以64，就是把每个大小相邻的牌型拉开64的间隔，以便于让花色值有发挥的空间哈哈哈哈~</li>
 <li>如果是炸弹，先将炸弹按花色从大到小排序，保证比如黑桃A红桃A方片A会&gt;红桃A梅花A方片A</li>
 </ul>
-<p>####如此，就可得对所有的牌值进行了统一的大小计算</p>
-
+<p>如此，就可得对所有的牌值进行了统一的大小计算</p>
+<h6 id="代码在Github上"><a href="#代码在Github上" class="headerlink" title="代码在Github上"></a><a href="https://github.com/LeonXtp/FriedGoldenFlower" target="_blank" rel="external">代码在Github上</a></h6>
       
     </div>
 
@@ -656,7 +633,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#花色不参与大小比较"><span class="nav-number">1.</span> <span class="nav-text">花色不参与大小比较:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#花色参与大小比较"><span class="nav-number">2.</span> <span class="nav-text">花色参与大小比较:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#代码在Github上"><span class="nav-number">3.</span> <span class="nav-text">代码在Github上</span></a></li></ol></div>
             
           </div>
         </section>
