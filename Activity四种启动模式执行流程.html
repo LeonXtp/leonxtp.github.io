@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="activity执行流程" />
 
 
 
@@ -84,13 +84,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://blog.leonxtp.com/categories/index.html">
+<meta name="description" content="把activity在各种模式下的执行流程总结一下，以备速查">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Activity四种启动模式执行流程">
+<meta property="og:url" content="http://blog.leonxtp.com/Activity四种启动模式执行流程.html">
 <meta property="og:site_name" content="LeonXtp's Blog">
-<meta property="og:updated_time" content="2016-09-21T16:31:33.455Z">
+<meta property="og:description" content="把activity在各种模式下的执行流程总结一下，以备速查">
+<meta property="og:updated_time" content="2016-12-23T03:03:59.275Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="Activity四种启动模式执行流程">
+<meta name="twitter:description" content="把activity在各种模式下的执行流程总结一下，以备速查">
 
 
 
@@ -111,15 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://blog.leonxtp.com/categories/"/>
+  <link rel="canonical" href="http://blog.leonxtp.com/Activity四种启动模式执行流程.html"/>
 
-  <title>
-  
-
-  
-    分类 | LeonXtp's Blog
-  
-</title>
+  <title> Activity四种启动模式执行流程 | LeonXtp's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -150,7 +147,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -273,16 +270,201 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <div class="category-all-page">
-        <div class="category-all-title">
-            目前共计 4 个分类
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Activity四种启动模式执行流程
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-23T10:57:58+08:00" content="2016-12-23">
+              2016-12-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/android备忘录/" itemprop="url" rel="index">
+                    <span itemprop="name">android备忘录</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/Activity四种启动模式执行流程.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="Activity四种启动模式执行流程.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
         </div>
-        <div class="category-all">
-          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Android/">Android</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/android备忘录/">android备忘录</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/life/">life</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/趣味代码/">趣味代码</a><span class="category-list-count">1</span></li></ul>
-        </div>
-      </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="四种模式首次启动执行流程都一样："><a href="#四种模式首次启动执行流程都一样：" class="headerlink" title="四种模式首次启动执行流程都一样："></a>四种模式首次启动执行流程都一样：</h4><p>首次启动：<br>onCreate=&gt;onStart=&gt;onResume=&gt;onAttachedToWindow<br>去到其他Activity：<br>onPause=&gt;其他Activity执行onAttachedToWindow后=&gt;onStop<br>从其他activity返回：<br>onRestart=&gt;onStart=&gt;onResume<br>按Home键：<br>onPause=&gt;不可见后=&gt;onStop</p>
+<h4 id="standard方式较为不同"><a href="#standard方式较为不同" class="headerlink" title="standard方式较为不同"></a>standard方式较为不同</h4><ul>
+<li><strong>standard</strong>:<br><strong>连续</strong>再次启动：<br>onPause=&gt;onCreate=&gt;onStart=&gt;onResume=&gt;onAttachedToWindow=&gt;onStop<br>点击返回：<br>onPause=&gt;((执行要回到的activity中的方法)onRestart=&gt;onStart=&gt;onResume)=&gt;onStop=&gt;onDestroy</li>
+</ul>
+<h4 id="其他三种方式的执行流程基本差不多，但都只有一个实例"><a href="#其他三种方式的执行流程基本差不多，但都只有一个实例" class="headerlink" title="其他三种方式的执行流程基本差不多，但都只有一个实例"></a>其他三种方式的执行流程基本差不多，但都只有一个实例</h4><ul>
+<li><strong>singleTop</strong>:<br><strong>连续</strong>启动(已在栈顶，不再重新创建实例)：<br>onPause=&gt;onNewIntent=&gt;onResume<br>点击返回：<br>onPause=&gt;onStop=&gt;onDestroy<br>已在栈中，但不在栈顶，再次启动，将重新创建实例，与standard一样</li>
+<li><strong>singleInstance</strong>:<br><strong>连续</strong>启动(已在栈顶，不再次创建实例)：<br>onPause=&gt;onNewIntent=&gt;onResume<br>点击返回：<br>onPause=&gt;onStop=&gt;onDestroy<br>已在栈中，但不在栈顶，再次启动（移动到栈顶，不再次创建实例，不影响其他的activity）：<br>onNewIntent=&gt;onRestart=&gt;onStart=&gt;onResume</li>
+<li><strong>singleTask</strong>:<br><strong>连续</strong>启动(已在栈顶，不再次创建实例)：<br>onPause=&gt;onNewIntent=&gt;onResume<br>点击返回：<br>onPause=&gt;onStop=&gt;onDestroy<br>已在栈中，但不在栈顶，再次启动(将处于它顶部以上的activity全都推出去，这样它就自动处于栈顶了)：<br>onNewIntent=&gt;onRestart=&gt;onStart=&gt;onResume</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>最近访客</p>
+</blockquote>
+<div class="ds-recent-visitors" data-num-items="28" data-avatar-size="42" id="ds-recent-visitors"></div>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果本文对您有帮助，欢迎打赏~</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://leonblog.oss-cn-shenzhen.aliyuncs.com/photos/album/wxpay.png" alt="LeonXtp WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://leonblog.oss-cn-shenzhen.aliyuncs.com/photos/album/alipay.png" alt="LeonXtp Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android基础/" rel="tag">#android基础</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/炸金花牌大小绝对值计算、比较及排序，包含花色参与和不参与大小比较.html" rel="next" title="炸金花牌大小绝对值计算、比较及排序，包含花色参与和不参与大小比较">
+                <i class="fa fa-chevron-left"></i> 炸金花牌大小绝对值计算、比较及排序，包含花色参与和不参与大小比较
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
   </div>
 
 
@@ -291,6 +473,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="Activity四种启动模式执行流程.html"
+           data-title="Activity四种启动模式执行流程" data-url="http://blog.leonxtp.com/Activity四种启动模式执行流程.html">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -310,8 +500,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -447,6 +646,17 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#四种模式首次启动执行流程都一样："><span class="nav-number">1.</span> <span class="nav-text">四种模式首次启动执行流程都一样：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#standard方式较为不同"><span class="nav-number">2.</span> <span class="nav-text">standard方式较为不同</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他三种方式的执行流程基本差不多，但都只有一个实例"><span class="nav-number">3.</span> <span class="nav-text">其他三种方式的执行流程基本差不多，但都只有一个实例</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -542,6 +752,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 

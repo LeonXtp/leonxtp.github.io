@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title><![CDATA[Activity四种启动模式执行流程]]></title>
+      <url>http://blog.leonxtp.com/Activity%E5%9B%9B%E7%A7%8D%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.html</url>
+      <content type="html"><![CDATA[<h4 id="四种模式首次启动执行流程都一样："><a href="#四种模式首次启动执行流程都一样：" class="headerlink" title="四种模式首次启动执行流程都一样："></a>四种模式首次启动执行流程都一样：</h4><p>首次启动：<br>onCreate=&gt;onStart=&gt;onResume=&gt;onAttachedToWindow<br>去到其他Activity：<br>onPause=&gt;其他Activity执行onAttachedToWindow后=&gt;onStop<br>从其他activity返回：<br>onRestart=&gt;onStart=&gt;onResume<br>按Home键：<br>onPause=&gt;不可见后=&gt;onStop</p>
+<h4 id="standard方式较为不同"><a href="#standard方式较为不同" class="headerlink" title="standard方式较为不同"></a>standard方式较为不同</h4><ul>
+<li><strong>standard</strong>:<br><strong>连续</strong>再次启动：<br>onPause=&gt;onCreate=&gt;onStart=&gt;onResume=&gt;onAttachedToWindow=&gt;onStop<br>点击返回：<br>onPause=&gt;((执行要回到的activity中的方法)onRestart=&gt;onStart=&gt;onResume)=&gt;onStop=&gt;onDestroy</li>
+</ul>
+<h4 id="其他三种方式的执行流程基本差不多，但都只有一个实例"><a href="#其他三种方式的执行流程基本差不多，但都只有一个实例" class="headerlink" title="其他三种方式的执行流程基本差不多，但都只有一个实例"></a>其他三种方式的执行流程基本差不多，但都只有一个实例</h4><ul>
+<li><strong>singleTop</strong>:<br><strong>连续</strong>启动(已在栈顶，不再重新创建实例)：<br>onPause=&gt;onNewIntent=&gt;onResume<br>点击返回：<br>onPause=&gt;onStop=&gt;onDestroy<br>已在栈中，但不在栈顶，再次启动，将重新创建实例，与standard一样</li>
+<li><strong>singleInstance</strong>:<br><strong>连续</strong>启动(已在栈顶，不再次创建实例)：<br>onPause=&gt;onNewIntent=&gt;onResume<br>点击返回：<br>onPause=&gt;onStop=&gt;onDestroy<br>已在栈中，但不在栈顶，再次启动（移动到栈顶，不再次创建实例，不影响其他的activity）：<br>onNewIntent=&gt;onRestart=&gt;onStart=&gt;onResume</li>
+<li><strong>singleTask</strong>:<br><strong>连续</strong>启动(已在栈顶，不再次创建实例)：<br>onPause=&gt;onNewIntent=&gt;onResume<br>点击返回：<br>onPause=&gt;onStop=&gt;onDestroy<br>已在栈中，但不在栈顶，再次启动(将处于它顶部以上的activity全都推出去，这样它就自动处于栈顶了)：<br>onNewIntent=&gt;onRestart=&gt;onStart=&gt;onResume</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>最近访客</p>
+</blockquote>
+<div class="ds-recent-visitors" data-num-items="28" data-avatar-size="42" id="ds-recent-visitors"></div>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[炸金花牌大小绝对值计算、比较及排序，包含花色参与和不参与大小比较]]></title>
       <url>http://blog.leonxtp.com/%E7%82%B8%E9%87%91%E8%8A%B1%E7%89%8C%E5%A4%A7%E5%B0%8F%E7%BB%9D%E5%AF%B9%E5%80%BC%E8%AE%A1%E7%AE%97%E3%80%81%E6%AF%94%E8%BE%83%E5%8F%8A%E6%8E%92%E5%BA%8F%EF%BC%8C%E5%8C%85%E5%90%AB%E8%8A%B1%E8%89%B2%E5%8F%82%E4%B8%8E%E5%92%8C%E4%B8%8D%E5%8F%82%E4%B8%8E%E5%A4%A7%E5%B0%8F%E6%AF%94%E8%BE%83.html</url>
       <content type="html"><![CDATA[<p>昨日忽生兴趣，想起同事正在玩的一个炸金花游戏，见他们讨论略有激烈，想来蛮有趣，于是自己也写来玩玩。<br>因有要一次产生很多副牌的需求（可能上1000），要对所有的玩家进行一个排序，因此考虑一个能得到每幅牌的绝对大小的统一算法。</p>
